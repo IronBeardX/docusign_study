@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+      - ./app/RSA_PRIVATE_KEY.pem:/app/RSA_PRIVATE_KEY.pem:ro
+      - ./app/RSA_PUBLIC_KEY.pem:/app/RSA_PUBLIC_KEY.pem:ro
+      - ./.env:/app/.env
+    environment:
+      - DOCUSIGN_CLIENT_ID=${DOCUSIGN_CLIENT_ID}
+      - DOCUSIGN_USER_ID=${DOCUSIGN_USER_ID}
+      - DOCUSIGN_AUTH_SERVER=${DOCUSIGN_AUTH_SERVER}
+      - DOCUSIGN_PRIVATE_KEY_PATH=./app/RSA_PRIVATE_KEY.pem
+      - DOCUSIGN_PUBLIC_KEY_PATH=/app/RSA_PUBLIC_KEY.pem
+      - DOCUSIGN_ACCOUNT_ID=${DOCUSIGN_ACCOUNT_ID}

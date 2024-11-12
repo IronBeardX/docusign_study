@@ -1,0 +1,5 @@
+*.pem
+.env
+.python-version
+/app/static/
+**/__pycache__/

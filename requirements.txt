@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+docusign-esign
+docusign-click
+pydantic
+python-jose
+requests
+python-multipart
+python-dotenv
+pydantic-settings
