@@ -2,7 +2,7 @@ from docusign_esign import ApiClient, ApiException
 from docusign_esign.models import OauthAccess, UserInfo
 from os import path
 from typing import List
-from app.config import settings
+from config import settings
 
 def get_access_token(user_id: str):
     try:
@@ -43,7 +43,7 @@ def get_jwt_token(private_key: str, scopes: List[str], client_id: str, auth_serv
         private_key_bytes=private_key,
         expires_in=4000,
         scopes=scopes
-    )
+    )#TODO: Can this authentication be done using request_jwt_application_token ?
     return response
 
 def get_private_key(private_key_path: str) -> str:

@@ -1,5 +1,5 @@
 from docusign_esign import EnvelopesApi, ApiException
-from app.auth.jwt_auth import get_docusign_client
+from auth.jwt_auth import get_docusign_client
 
 # Start a new signing process
 def start_signing_process():
